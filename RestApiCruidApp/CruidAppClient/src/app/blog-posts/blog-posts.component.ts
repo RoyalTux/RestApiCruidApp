@@ -11,6 +11,8 @@ import { BlogPost } from '../models/blogpost';
 export class BlogPostsComponent implements OnInit {
   blogPosts$: Observable<BlogPost[]>;
 
+  public loading = false;
+
   constructor(private blogPostService: BlogPostService) {
   }
 
@@ -19,6 +21,7 @@ export class BlogPostsComponent implements OnInit {
   }
 
   loadBlogPosts() {
+    this.loading = true;
     this.blogPosts$ = this.blogPostService.getBlogPosts();
   }
 

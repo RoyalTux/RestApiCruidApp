@@ -9,6 +9,7 @@ import { BlogPostsComponent } from './blog-posts/blog-posts.component';
 import { BlogPostComponent } from './blog-post/blog-post.component';
 import { BlogPostAddEditComponent } from './blog-post-add-edit/blog-post-add-edit.component';
 import { BlogPostService } from './services/blog-post.service';
+import { NgxLoadingModule, ngxLoadingAnimationTypes } from 'ngx-loading';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,10 @@ import { BlogPostService } from './services/blog-post.service';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxLoadingModule.forRoot({
+      animationType: ngxLoadingAnimationTypes.rotatingPlane,
+    })
   ],
   providers: [
     BlogPostService

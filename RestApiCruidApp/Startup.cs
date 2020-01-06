@@ -60,8 +60,8 @@ namespace RestApiCruidApp
 
             app.UseCors("CorsPolicy");
             app.UseHttpsRedirection();
-            app.UseStaticFiles();
-            //app.UseSpaStaticFiles();
+            // app.UseStaticFiles();
+            app.UseSpaStaticFiles();
 
             app.UseMvc(routes =>
             {

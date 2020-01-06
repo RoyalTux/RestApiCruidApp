@@ -1,6 +1,7 @@
 <h1>Blog posts</h1>
 
-<p *ngIf="!(blogPosts$ | async)"><em>Loading...</em></p>
+<!-- <p *ngIf="!(blogPosts$ | async)"><em>Loading...</em></p> -->
+<ngx-loading *ngIf="!(blogPosts$ | async)" [show]="loading" [config]="{ backdropBorderRadius: '3px' }" [template]="customLoadingTemplate"></ngx-loading>
 <p>
   <a [routerLink]="['/add']" class="btn btn-primary float-right mb-3">New post</a>
 </p>
