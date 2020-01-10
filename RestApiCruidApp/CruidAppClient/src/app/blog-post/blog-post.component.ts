@@ -12,6 +12,7 @@ import { BlogPost } from '../models/blogpost';
 export class BlogPostComponent implements OnInit {
   blogPost$: Observable<BlogPost>;
   postId: number;
+  public loading = false;
 
   constructor(private blogPostService: BlogPostService, private avRoute: ActivatedRoute) {
     const idParam = 'id';
@@ -25,6 +26,7 @@ export class BlogPostComponent implements OnInit {
   }
 
   loadBlogPost() {
+    this.loading = true;
     this.blogPost$ = this.blogPostService.getBlogPost(this.postId);
   }
 }

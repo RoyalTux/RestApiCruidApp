@@ -10,7 +10,6 @@ using RestApiCruidApp.Models;
 namespace RestApiCruidApp.Controllers
 {
     [Route("api/[controller]")]
-    [Produces("application/json")]
     [ApiController]
     public class BlogPostsController : ControllerBase
     {

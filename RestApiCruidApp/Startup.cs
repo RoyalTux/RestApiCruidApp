@@ -23,6 +23,9 @@ namespace RestApiCruidApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services
+                .AddMvc()
+                .AddXmlSerializerFormatters();
 
             services.AddDbContext<BlogPostsContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("BlogPostsContext")));
@@ -60,7 +63,7 @@ namespace RestApiCruidApp
 
             app.UseCors("CorsPolicy");
             app.UseHttpsRedirection();
-            // app.UseStaticFiles();
+            app.UseStaticFiles();
             app.UseSpaStaticFiles();
 
             app.UseMvc(routes =>

@@ -8,4 +8,4 @@
     </ul>
   
   </ng-container>
-  <ng-template #loading>Loading…</ng-template>
+  <ng-template #loading><ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }" [template]="customLoadingTemplate"></ngx-loading></ng-template>
